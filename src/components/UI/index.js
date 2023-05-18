@@ -1,3 +1,3 @@
-export { deafult as Button } from './Button/Button'
-export { deafult as Logo } from './Logo/Logo'
-export { deafult as Overlay } from './Overlay/Overlay'
+export { default as Button } from './Button/Button'
+export { default as Logo } from './Logo/Logo'
+export { default as LazyImage } from './LazyImage/LazyImage'

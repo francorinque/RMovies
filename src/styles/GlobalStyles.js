@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
         --color-bg: #2b2a2a;
         --color-bg-dark: #181818;
         --color-text: #ffff;
-        --color-text-light: #efefef;
+        --color-text-light: #b8b8b8;
         --color-ui : #AB6AFF;
         --gradient: linear-gradient(90deg, #6d41a7,#ab6aff);
         --h-header: 70px;
@@ -20,6 +20,7 @@ export const GlobalStyles = createGlobalStyle`
         --semibold: 600;
         --bold: 800;
         --radius: 8px;
+        --max-w: 1300px;
     }
 
     body{
@@ -38,3 +39,19 @@ export const GlobalStyles = createGlobalStyle`
         object-fit: cover;
     }
 `
+
+// .lazy-load-image-background {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 12px;
+//     overflow: hidden;
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//       object-position: center;
+//     }
+//   }

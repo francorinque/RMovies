@@ -1,19 +1,21 @@
-import { Header, Nav, NavToggle, NavSearchIcon } from './Navbar.styled'
+import { Header, Nav, NavSearchIcon, NavToggle } from './Navbar.styled'
 
-import Logo from '../UI/Logo/Logo'
 import Button from '../UI/Button/Button'
+import Logo from '../UI/Logo/Logo'
 import NavMenu from './NavMenu'
 
-import { IoMenuOutline, IoCloseOutline, IoSearchSharp } from 'react-icons/io5'
+import { IoCloseOutline, IoMenuOutline, IoSearchSharp } from 'react-icons/io5'
 
-import { Link } from 'react-router-dom'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { MenuContext } from '../../context/MenuContext'
+import { useNavbar } from '../../hooks/useNavbar'
 import NavbarSearch from './NavbarSearch/NavbarSearch'
 
 const Navbar = () => {
   const { showMenu, setShowMenu, handleToggle, showInput, setShowInput } =
     useContext(MenuContext)
+  const { showHeader } = useNavbar()
 
   function handleSearchIcon() {
     if (showMenu) {
@@ -23,7 +25,11 @@ const Navbar = () => {
   }
 
   return (
-    <Header show={showMenu.toString()}>
+    <Header
+      showmenu={showMenu.toString()}
+      showinput={showInput.toString()}
+      showheader={showHeader}
+    >
       <Nav>
         <Link to='/'>
           <Logo />

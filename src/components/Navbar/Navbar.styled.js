@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { styled } from 'styled-components'
+import { css, styled } from 'styled-components'
 
 export const Header = styled.header`
   height: var(--h-header);
@@ -7,10 +7,33 @@ export const Header = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-
-  background: ${({ show }) => (show === 'true' ? 'var(--color-bg)' : 'none')};
+  z-index: 99;
   transition: ease 0.3s;
+  background: ${({ showmenu, showinput }) =>
+    showinput === 'true' || showmenu === 'true' ? 'var(--color-bg)' : 'none'};
+
+  ${({ showheader }) => {
+    switch (showheader) {
+      case 'hide':
+        return css`
+          translate: 0 -200px;
+          transition: ease 0.3s;
+        `
+      case 'show':
+        return css`
+          background: #0005005d;
+          backdrop-filter: blur(3.5px);
+          transition: ease 0.3s;
+        `
+      default:
+        css`
+          background: none;
+          translate: none;
+        `
+    }
+  }}
 `
+
 export const Nav = styled.nav`
   width: min(1300px, 100%);
   height: 100%;

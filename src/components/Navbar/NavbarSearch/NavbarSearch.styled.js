@@ -4,6 +4,8 @@ export const Search = styled.div`
   width: 100%;
   max-width: 1300px;
   position: fixed;
+  border-radius: var(--radius);
+  overflow: hidden;
   top: ${({ show }) => (show === 'true' ? 'var(--h-header)' : '-200px')};
   left: 50%;
   transform: translateX(-50%);
@@ -13,7 +15,7 @@ export const Search = styled.div`
     width: 100%;
     border: none;
     outline: none;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
   }
 `
