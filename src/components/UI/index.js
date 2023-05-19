@@ -1,3 +1,5 @@
 export { default as Button } from './Button/Button'
 export { default as Logo } from './Logo/Logo'
 export { default as LazyImage } from './LazyImage/LazyImage'
+export { default as Loader } from './Loader/Loader'
+export { default as Slide } from './Slide/Slide'

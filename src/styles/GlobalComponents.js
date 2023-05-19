@@ -18,3 +18,23 @@ export const ButtonGlobal = styled.button`
     transform: scale(0.95);
   }
 `
+
+//sliders
+export const Title = styled.h3`
+  font-size: 25px;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`
+
+export const Top = styled.div`
+  display: flex;
+  justify-content: space-between;
+`

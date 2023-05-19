@@ -1,3 +1,5 @@
 export { default as Navbar } from './Navbar/Navbar'
 export { default as Layout } from './Layout/Layout'
 export { default as Banner } from './Banner/Banner'
+export { default as SlideTrending } from './SlideTrending/SlideTrending'
+export { default as SlidePopular } from './SlidePopular/SlidePopular'

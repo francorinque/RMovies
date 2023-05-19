@@ -15,6 +15,11 @@ export const GlobalStyles = createGlobalStyle`
         --color-text-light: #b8b8b8;
         --color-ui : #AB6AFF;
         --gradient: linear-gradient(90deg, #6d41a7,#ab6aff);
+        --gradient-overlay: linear-gradient(
+                1deg,
+            rgba(24, 24, 24, 1) 0%,
+            rgba(24, 24, 24, 0.5018382352941176) 100%
+            );
         --h-header: 70px;
         --regular: 300;
         --semibold: 600;

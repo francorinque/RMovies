@@ -17,6 +17,7 @@
     "react-lazy-load-image-component": "^1.5.6",
     "react-router-dom": "^6.11.1",
     "styled-components": "6.0.0-rc.1",
+    "swiper": "^9.3.2",
     "zustand": "^4.3.8"
   },
   "devDependencies": {

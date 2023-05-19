@@ -1,4 +1,4 @@
-import { BannerStyled, OverlayGradient, Content } from './Banner.styled'
+import { BannerStyled, OverlayGradient, Content, Texts } from './Banner.styled'
 
 import { LazyImage } from '../UI'
 
@@ -8,22 +8,14 @@ import useFetch from '../../hooks/useFetch'
 import BannerSearch from './BannerSearch/BannerSearch'
 
 const Banner = () => {
+  const { data, loading } = useFetch('/movie/now_playing')
   const [random, setRandom] = useState({})
   const { imagesUrl } = useHomeStore((state) => state)
-  const { data, loading } = useFetch('/movie/now_playing')
 
-  useEffect(
-    function () {
-      let interval = setInterval(() => {
-        let randomNumber = Math.floor(Math.random() * data?.results.length)
-        let randomObj = data?.results[randomNumber]
-        setRandom(randomObj)
-      }, 5000)
-
-      return () => clearInterval(interval)
-    },
-    [data]
-  )
+  useEffect(() => {
+    let randomNumber = Math.floor(Math.random() * data?.results.length)
+    setRandom(data?.results[randomNumber])
+  }, [data])
 
   return (
     <BannerStyled>
@@ -33,7 +25,10 @@ const Banner = () => {
         />
       )}
       <Content>
-        <h1>Sumergete en el mundo del entretenimiento.</h1>
+        <Texts>
+          <h1>Welcome</h1>
+          <p>Discover millions of movies or tv shows.</p>
+        </Texts>
         <BannerSearch />
       </Content>
       <span>{random?.title}</span>

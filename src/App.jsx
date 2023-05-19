@@ -10,9 +10,12 @@ import { Layout, Navbar } from './components'
 function App() {
   const { setImagesUrl } = useHomeStore((state) => state)
 
-  useEffect(function () {
-    setImagesUrl()
-  }, [])
+  useEffect(
+    function () {
+      setImagesUrl()
+    },
+    [setImagesUrl]
+  )
 
   return (
     <>
