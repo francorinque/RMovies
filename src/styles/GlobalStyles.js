@@ -13,8 +13,8 @@ export const GlobalStyles = createGlobalStyle`
         --color-bg-dark: #181818;
         --color-text: #ffff;
         --color-text-light: #b8b8b8;
-        --color-ui : #AB6AFF;
-        --gradient: linear-gradient(90deg, #6d41a7,#ab6aff);
+        --color-ui : #DB0000;
+        --gradient: linear-gradient(90deg, var(--color-ui), #aa0000);
         --gradient-overlay: linear-gradient(
                 1deg,
             rgba(24, 24, 24, 1) 0%,

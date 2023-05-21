@@ -1,18 +1,26 @@
-import { Wrapper, Top, Title } from '../../styles/GlobalComponents'
-import { Loader, Slide } from '../UI'
+import { Title, Top, Wrapper } from '../../styles/GlobalComponents'
 
+import Carousel from '../Carousel/Carousel'
+
+import { useState } from 'react'
 import useFetch from '../../hooks/useFetch'
+import SwitchTabs from '../Carousel/SwitchTabs/SwitchTabs'
 
-const SlidePopular = ({ title, mediaType }) => {
+const SlidePopular = () => {
+  const [mediaType, setMediaType] = useState('tv')
   const { data, loading } = useFetch(`/${mediaType}/popular`)
+
+  const changeTab = (mediatype) => {
+    setMediaType(mediatype)
+  }
 
   return (
     <Wrapper>
       <Top>
-        <Title>{title}</Title>
+        <Title>Popular</Title>
+        <SwitchTabs arr={['tv', 'movie']} changeTab={changeTab} />
       </Top>
-      {loading && <Loader />}
-      <Slide data={data} />
+      <Carousel data={data} loading={loading} />
     </Wrapper>
   )
 }

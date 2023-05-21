@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { fetchDataFromApi } from '../api/axios'
+import { fetchAllGenres } from '../utils/fetchAllGenres.utility'
 
 export const useHomeStore = create((set) => ({
   imagesUrl: {},
@@ -16,5 +17,9 @@ export const useHomeStore = create((set) => ({
     } catch (error) {
       console.log(error)
     }
+  },
+  setGenres: async () => {
+    let genres = await fetchAllGenres()
+    set({ genres: genres })
   },
 }))

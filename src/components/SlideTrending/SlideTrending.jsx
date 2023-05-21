@@ -1,14 +1,13 @@
-import SlideSwitchTabs from './SlideSwitchTabs'
-import { Loader, Slide } from '../UI'
-
-import useFetch from '../../hooks/useFetch'
 import { useState } from 'react'
-import { Wrapper, Top, Title } from '../../styles/GlobalComponents'
+import useFetch from '../../hooks/useFetch'
 
-const SlideTrending = ({ title, mediaType }) => {
+import { Title, Top, Wrapper } from '../../styles/GlobalComponents'
+import Carousel from '../Carousel/Carousel'
+import SwitchTabs from '../Carousel/SwitchTabs/SwitchTabs'
+
+const SlideTrending = () => {
   const [timeWindow, setTimeWindow] = useState('day')
-
-  const { data, loading } = useFetch(`/trending/${mediaType}/${timeWindow}`)
+  const { data, loading } = useFetch(`/trending/all/${timeWindow}`)
 
   const changeTab = (tab) => {
     setTimeWindow(tab.toLowerCase())
@@ -17,11 +16,10 @@ const SlideTrending = ({ title, mediaType }) => {
   return (
     <Wrapper>
       <Top>
-        <Title>{title}</Title>
-        <SlideSwitchTabs arr={['Day', 'Week']} changeTab={changeTab} />
+        <Title>Trending</Title>
+        <SwitchTabs arr={['Day', 'Week']} changeTab={changeTab} />
       </Top>
-      {loading && <Loader />}
-      <Slide data={data} />
+      <Carousel data={data} loading={loading} />
     </Wrapper>
   )
 }

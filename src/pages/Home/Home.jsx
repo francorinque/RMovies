@@ -1,4 +1,4 @@
-import { HomeStyled, Container } from './Home.styled'
+import { Container, HomeStyled } from './Home.styled'
 
 import { Banner, SlidePopular, SlideTrending } from '../../components'
 
@@ -7,10 +7,8 @@ const Home = () => {
     <HomeStyled>
       <Banner />
       <Container>
-        <SlideTrending title='Trending Movies' mediaType='movie' />
-        <SlidePopular title='Top Movies' mediaType='movie' />
-        <SlideTrending title='Trending Tv Shows' mediaType='tv' />
-        <SlidePopular title='Top Tv Shows' mediaType='tv' />
+        <SlideTrending />
+        <SlidePopular />
       </Container>
     </HomeStyled>
   )

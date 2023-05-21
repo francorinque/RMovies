@@ -1,7 +1,10 @@
 import { styled } from 'styled-components'
 
 export const Switch = styled.div`
+  height: 30px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
@@ -10,12 +13,14 @@ export const Switch = styled.div`
 
 export const Tab = styled.div`
   width: 100px;
-  padding: 5px 0;
+
   z-index: 3;
   text-align: center;
   position: relative;
   cursor: pointer;
   user-select: none;
+  font-size: 14px;
+  text-transform: capitalize;
 `
 
 export const MovingBox = styled.div`

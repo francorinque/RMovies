@@ -8,13 +8,14 @@ import { useHomeStore } from './store/home'
 import { Layout, Navbar } from './components'
 
 function App() {
-  const { setImagesUrl } = useHomeStore((state) => state)
+  const { setGenres, setImagesUrl } = useHomeStore((state) => state)
 
   useEffect(
     function () {
       setImagesUrl()
+      setGenres()
     },
-    [setImagesUrl]
+    [setImagesUrl, setGenres]
   )
 
   return (

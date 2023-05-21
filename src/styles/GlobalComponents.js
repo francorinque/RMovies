@@ -21,7 +21,7 @@ export const ButtonGlobal = styled.button`
 
 //sliders
 export const Title = styled.h3`
-  font-size: 25px;
+  font-size: clamp(18px, 2vw, 25px);
   background: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
@@ -32,9 +32,14 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  position: relative;
 `
 
 export const Top = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+  }
 `
