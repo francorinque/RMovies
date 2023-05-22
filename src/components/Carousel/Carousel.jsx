@@ -1,8 +1,9 @@
+import { CarouselItems, CarouselStyled } from './Carousel.styled'
+
 import { useRef } from 'react'
-import { CarouselStyled, CarouselItems } from './Carousel.styled'
-import CarouselItem from './CarouselItem'
+
 import Arrows from './Arrows/Arrows'
-import { SkItem } from '../UI'
+import { Card, SkItem } from '../UI'
 
 const Carousel = ({ data, loading }) => {
   const containerRef = useRef()
@@ -31,9 +32,7 @@ const Carousel = ({ data, loading }) => {
             <SkItem />
           </>
         ) : (
-          data?.results.map((item) => (
-            <CarouselItem key={item.id} item={item} />
-          ))
+          data?.results.map((item) => <Card key={item.id} item={item} />)
         )}
       </CarouselItems>
       <Arrows navigation={navigation} />

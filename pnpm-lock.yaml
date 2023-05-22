@@ -10,6 +10,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.6.0
   eslint-plugin-react-refresh: ^0.3.4
   react: ^18.2.0
+  react-circular-progressbar: ^2.1.0
   react-dom: ^18.2.0
   react-icons: ^4.8.0
   react-lazy-load-image-component: ^1.5.6
@@ -22,6 +23,7 @@ specifiers:
 dependencies:
   axios: 1.4.0
   react: 18.2.0
+  react-circular-progressbar: 2.1.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.8.0
   react-lazy-load-image-component: 1.5.6
@@ -2967,6 +2969,12 @@ packages:
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
+
+  /react-circular-progressbar/2.1.0:
+    resolution: {integrity: sha512-xp4THTrod4aLpGy68FX/k1Q3nzrfHUjUe5v6FsdwXBl3YVMwgeXYQKDrku7n/D6qsJA9CuunarAboC2xCiKs1g==}
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dev: false
 
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}

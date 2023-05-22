@@ -122,3 +122,16 @@ export const NavSearchIcon = styled.div`
     margin-left: 20px;
   }
 `
+
+export const WrapperSearch = styled.div`
+  width: 100%;
+  max-width: 1300px;
+  position: fixed;
+  border-radius: var(--radius);
+  overflow: hidden;
+  top: ${({ showsearch }) =>
+    showsearch === 'true' ? 'var(--h-header)' : '-200px'};
+  left: 50%;
+  transform: translateX(-50%);
+  transition: ease 0.3s;
+`

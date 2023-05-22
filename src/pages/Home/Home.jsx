@@ -1,6 +1,11 @@
 import { Container, HomeStyled } from './Home.styled'
 
-import { Banner, SlidePopular, SlideTrending } from '../../components'
+import {
+  Banner,
+  SlidePopular,
+  SlideTrending,
+  SlideTopRated,
+} from '../../components'
 
 const Home = () => {
   return (
@@ -9,6 +14,7 @@ const Home = () => {
       <Container>
         <SlideTrending />
         <SlidePopular />
+        <SlideTopRated />
       </Container>
     </HomeStyled>
   )

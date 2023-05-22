@@ -16,7 +16,6 @@ export async function fetchAllGenres() {
       }
       return acc
     }, {})
-    console.log(newGenres)
     return newGenres
   } catch (error) {
     console.log(error)

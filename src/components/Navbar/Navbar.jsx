@@ -1,4 +1,10 @@
-import { Header, Nav, NavSearchIcon, NavToggle } from './Navbar.styled'
+import {
+  Header,
+  Nav,
+  NavSearchIcon,
+  NavToggle,
+  WrapperSearch,
+} from './Navbar.styled'
 
 import Button from '../UI/Button/Button'
 import Logo from '../UI/Logo/Logo'
@@ -10,7 +16,7 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { MenuContext } from '../../context/MenuContext'
 import { useNavbar } from '../../hooks/useNavbar'
-import NavbarSearch from './NavbarSearch/NavbarSearch'
+import { Search } from '../UI'
 
 const Navbar = () => {
   const { showMenu, setShowMenu, handleToggle, showInput, setShowInput } =
@@ -20,8 +26,9 @@ const Navbar = () => {
   function handleSearchIcon() {
     if (showMenu) {
       setShowMenu(false)
+    } else {
+      setShowInput(!showInput)
     }
-    setShowInput(!showInput)
   }
 
   return (
@@ -51,7 +58,9 @@ const Navbar = () => {
           <IoSearchSharp size={20} />
         </NavSearchIcon>
 
-        <NavbarSearch />
+        <WrapperSearch showsearch={showInput.toString()}>
+          <Search />
+        </WrapperSearch>
       </Nav>
     </Header>
   )

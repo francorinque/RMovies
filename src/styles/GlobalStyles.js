@@ -12,9 +12,9 @@ export const GlobalStyles = createGlobalStyle`
         --color-bg: #2b2a2a;
         --color-bg-dark: #181818;
         --color-text: #ffff;
-        --color-text-light: #b8b8b8;
-        --color-ui : #DB0000;
-        --gradient: linear-gradient(90deg, var(--color-ui), #aa0000);
+        --color-text-light: #c9c9c9;
+        --color-ui : #BE3A34;
+        --gradient: linear-gradient(90deg, #852824 ,var(--color-ui));
         --gradient-overlay: linear-gradient(
                 1deg,
             rgba(24, 24, 24, 1) 0%,
@@ -43,20 +43,8 @@ export const GlobalStyles = createGlobalStyle`
         height: 100%;
         object-fit: cover;
     }
-`
 
-// .lazy-load-image-background {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     border-radius: 12px;
-//     overflow: hidden;
-//     img {
-//       width: 100%;
-//       height: 100%;
-//       object-fit: cover;
-//       object-position: center;
-//     }
-//   }
+    section{
+        padding: 100px 0;
+    }
+`

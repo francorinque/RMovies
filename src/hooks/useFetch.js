@@ -3,11 +3,11 @@ import { fetchDataFromApi } from '../api/axios'
 
 const useFetch = (url) => {
   const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(null)
-  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
-    setLoading('loading...')
+    setLoading(true)
     setData(null)
     setError(null)
 
@@ -16,9 +16,9 @@ const useFetch = (url) => {
         setLoading(false)
         setData(res)
       })
-      .catch((err) => {
+      .catch(() => {
         setLoading(false)
-        setError('Something went wrong!')
+        setError(true)
       })
   }, [url])
 
