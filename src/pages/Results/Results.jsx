@@ -1,13 +1,38 @@
-import { ResultsStyled, ResultsCards, Text, NoResults } from './Results.styled'
+import { NoResults, ResultsCards, ResultsStyled, Text } from './Results.styled'
 
-import { useParams } from 'react-router-dom'
-import useFetch from '../../hooks/useFetch'
-import { Card, SkItem } from '../../components/UI'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { Loader } from '../../components/UI'
+import { useInfiniteScroll } from '../../hooks/useInfiniteScroll'
+import { useCallback, useRef, useState } from 'react'
+import ResultsCard from './ResultsCard'
+
+import { v4 as uid } from 'uuidd'
 
 const Results = () => {
+  const [page, setPage] = useState(1)
+
   const { query } = useParams()
-  const { data, loading, error } = useFetch(`/search/multi?query=${query}`)
+  const { loading, error, dataResults, hasNextPage } = useInfiniteScroll(
+    query,
+    page
+  )
+
+  const observer = useRef()
+  const lastCardElementRef = useCallback(
+    (el) => {
+      if (loading) return
+      if (observer.current) observer.current.disconnect()
+
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && hasNextPage) {
+          setPage((prev) => prev + 1)
+        }
+      })
+
+      if (el) observer.current.observe(el)
+    },
+    [loading, hasNextPage]
+  )
 
   if (error) {
     return (
@@ -18,18 +43,21 @@ const Results = () => {
     )
   }
 
+  const renderCard = (item, i) => {
+    if (dataResults?.length === i + 1) {
+      return <ResultsCard item={item} ref={lastCardElementRef} key={uid()} />
+    } else {
+      return <ResultsCard item={item} key={uid()} />
+    }
+  }
+
   return (
     <ResultsStyled>
       <Text>
         Results for: <strong>{query}</strong>
       </Text>
-      <ResultsCards>
-        {loading ? (
-          <SkItem />
-        ) : (
-          data?.results.map((item) => <Card key={item.id} item={item} />)
-        )}
-      </ResultsCards>
+      <ResultsCards>{dataResults?.map(renderCard)}</ResultsCards>
+      {loading && <Loader />}
     </ResultsStyled>
   )
 }
