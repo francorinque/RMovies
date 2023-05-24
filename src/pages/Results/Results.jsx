@@ -6,7 +6,7 @@ import { useInfiniteScroll } from '../../hooks/useInfiniteScroll'
 import { useCallback, useRef, useState } from 'react'
 import ResultsCard from './ResultsCard'
 
-import { v4 as uid } from 'uuidd'
+import { v4 as uid } from 'uuid'
 
 const Results = () => {
   const [page, setPage] = useState(1)
