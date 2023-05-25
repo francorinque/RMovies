@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@splidejs/react-splide': ^0.7.12
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
   '@vitejs/plugin-react': ^4.0.0
@@ -24,6 +25,7 @@ specifiers:
   zustand: ^4.3.8
 
 dependencies:
+  '@splidejs/react-splide': 0.7.12
   axios: 1.4.0
   dayjs: 1.11.7
   framer-motion: 10.12.14
@@ -1676,6 +1678,16 @@ packages:
   /@remix-run/router/1.6.1:
     resolution: {integrity: sha512-YUkWj+xs0oOzBe74OgErsuR3wVn+efrFhXBWrit50kOiED+pvQe2r6MWY0iJMQU/mSVKxvNzL4ZaYvjdX+G7ZA==}
     engines: {node: '>=14'}
+    dev: false
+
+  /@splidejs/react-splide/0.7.12:
+    resolution: {integrity: sha512-UfXH+j47jsMc4x5HA/aOwuuHPqn6y9+ZTNYPWDRD8iLKvIVMZlzq2unjUEvyDAU+TTVPZOXkG2Ojeoz0P4AkZw==}
+    dependencies:
+      '@splidejs/splide': 4.1.4
+    dev: false
+
+  /@splidejs/splide/4.1.4:
+    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
     dev: false
 
   /@types/prop-types/15.7.5:

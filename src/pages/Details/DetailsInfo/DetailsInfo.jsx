@@ -1,4 +1,11 @@
-import { Info, Title, Stars, Flex } from './DetailsInfo.styled'
+import {
+  Info,
+  Title,
+  Stars,
+  Flex,
+  DivStyled,
+  Overview,
+} from './DetailsInfo.styled'
 
 import Genres from '../../../components/UI/Genres/Genres'
 
@@ -7,8 +14,10 @@ import {
   convertDateFromApi,
   convertToHour,
 } from '../../../utils/details.utility'
+import { useLocation } from 'react-router-dom'
 
 const DetailsInfo = ({ details }) => {
+  const { pathname } = useLocation()
   let starsArr = []
 
   if (details) {
@@ -35,31 +44,43 @@ const DetailsInfo = ({ details }) => {
         </Stars>
 
         <Flex content='space-around'>
-          <div>
+          <DivStyled>
             <p>Year</p>
             <span>
-              <strong>{convertDateFromApi(details.release_date)}</strong>
+              <strong>
+                {pathname.includes('tv')
+                  ? convertDateFromApi(details.first_air_date)
+                  : convertDateFromApi(details.release_date)}
+              </strong>
             </span>
-          </div>
-          <div>
+          </DivStyled>
+          <DivStyled>
             <p>Country</p>
             <span>
-              <strong>{convertDateFromApi(details.release_date)}</strong>
+              <strong>
+                {convertDateFromApi(details.production_countries[0].name)}
+              </strong>
             </span>
-          </div>
-          <div>
-            <p>Length</p>
+          </DivStyled>
+          <DivStyled>
+            <p>{pathname.includes('tv') ? 'episode runtime' : 'runtime'}</p>
             <span>
-              <strong>{convertToHour(details.runtime)}</strong>
+              <strong>
+                {pathname.includes('tv')
+                  ? convertToHour(details.episode_run_time)
+                  : convertToHour(details.runtime)}
+              </strong>
             </span>
-          </div>
+          </DivStyled>
         </Flex>
 
         <Flex content='center'>
-          <p>{details.taglain || details.overview}</p>
+          <Overview>{details.taglain || details.overview}</Overview>
         </Flex>
       </Info>
     )
   )
 }
 export default DetailsInfo
+
+// episode_run_time

@@ -4,6 +4,7 @@ export function convertToHour(min) {
 
   return min ? `${hours}:${minutes}min` : 'unknow'
 }
+
 export function convertDateFromApi(date) {
   if (date) {
     let year = date.split('-')

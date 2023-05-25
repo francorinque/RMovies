@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 export const Wrapper = styled.section`
-  padding: 0 !important;
+  padding: 0 0 50px 0 !important;
   min-height: 100vh;
 `
 export const Banner = styled.div`
@@ -18,4 +18,10 @@ export const Banner = styled.div`
     font-size: 20px;
     font-weight: var(--semibold);
   }
+`
+export const WrapperLoader = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `

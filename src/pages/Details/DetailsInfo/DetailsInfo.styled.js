@@ -25,3 +25,17 @@ export const Flex = styled.div`
   align-items: center;
   text-align: center;
 `
+
+export const DivStyled = styled.div`
+  text-align: center;
+  width: 100%;
+  font-size: clamp(12px, 2vw, 14px);
+`
+
+export const Overview = styled.div`
+  font-size: clamp(14px, 3vw, 18px);
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--color-text-light);
+`
