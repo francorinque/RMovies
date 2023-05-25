@@ -19,7 +19,7 @@ const SlideTopRated = () => {
         <Title>Top Rated</Title>
         <SwitchTabs arr={['tv', 'movie']} changeTab={changeTab} />
       </Top>
-      <Carousel data={data} loading={loading} />
+      <Carousel data={data} loading={loading} endpoint={mediaType} />
     </Wrapper>
   )
 }

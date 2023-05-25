@@ -20,7 +20,7 @@ const SlidePopular = () => {
         <Title>Popular</Title>
         <SwitchTabs arr={['tv', 'movie']} changeTab={changeTab} />
       </Top>
-      <Carousel data={data} loading={loading} />
+      <Carousel data={data} loading={loading} endpoint={mediaType} />
     </Wrapper>
   )
 }

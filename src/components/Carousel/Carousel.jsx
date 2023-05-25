@@ -5,7 +5,7 @@ import { useRef } from 'react'
 import Arrows from './Arrows/Arrows'
 import { Card, SkItem } from '../UI'
 
-const Carousel = ({ data, loading }) => {
+const Carousel = ({ data, loading,endpoint}) => {
   const containerRef = useRef()
   const navigation = (dir) => {
     const container = containerRef.current
@@ -32,7 +32,7 @@ const Carousel = ({ data, loading }) => {
             <SkItem />
           </>
         ) : (
-          data?.results.map((item) => <Card key={item.id} item={item} />)
+          data?.results.map((item) => <Card key={item.id} item={item} mediatypeFallback={endpoint}/>)
         )}
       </CarouselItems>
       <Arrows navigation={navigation} />

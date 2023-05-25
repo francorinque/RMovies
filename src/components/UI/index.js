@@ -7,3 +7,4 @@ export { default as CircleProgressbar } from './CircleProgressbar/CircleProgress
 export { default as Search } from './Search/Search'
 export { default as NotFound } from './NotFound/NotFound'
 export { default as Card } from './Card/Card'
+export { default as Genres } from './Genres/Genres'

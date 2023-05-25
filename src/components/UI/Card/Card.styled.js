@@ -1,5 +1,4 @@
 import { styled } from 'styled-components'
-import { motion } from 'framer-motion'
 
 export const CardStyled = styled.div`
   width: 100%;
@@ -42,16 +41,4 @@ export const Info = styled.div`
   width: 100%;
   z-index: 2;
   padding: 10px;
-
-  div {
-    display: flex;
-    gap: 10px;
-  }
-
-  div > p {
-    padding: 5px;
-    border-radius: var(--radius);
-    font-size: clamp(10px, 1vw, 12px);
-    color: var(--color-text-light);
-  }
 `
