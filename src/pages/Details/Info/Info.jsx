@@ -2,21 +2,21 @@ import {
   InfoBanner,
   BannerContent,
   BannerPoster,
-  BannerTitle,
   BannerTexts,
   BannerTagline,
   Flex,
-  OverviewTitle,
 } from './Info.styled'
 
 import { useHomeStore } from '../../../store/home'
 import Genres from '../../../components/UI/Genres/Genres'
 import CircleProgressbar from '../../../components/UI/CircleProgressbar/CircleProgressbar'
-// import LazyImage from '../../../components/UI/LazyImage/LazyImage'
 import Button from '../../../components/UI/Button/Button'
 import { IoPlayCircleSharp } from 'react-icons/io5'
+import LazyImage from '../../../components/UI/LazyImage/LazyImage'
+import { Title } from '../../../styles/GlobalComponents'
+import CastAndCrew from './CastAndCrew/CastAndCrew.jsx/CastAndCrew'
 
-const Info = ({ loading, data }) => {
+const Info = ({ data }) => {
   const { imagesUrl } = useHomeStore((state) => state)
   let bgSrc = imagesUrl.backdrop + data?.backdrop_path
   let poster = imagesUrl.poster + data?.poster_path
@@ -27,13 +27,12 @@ const Info = ({ loading, data }) => {
         <InfoBanner image={`${bgSrc}`}>
           <BannerContent>
             <BannerPoster>
-              <img src={poster} alt={data.title} />
-              {/* <LazyImage src={poster} alt={data.title} /> */}
+              <LazyImage src={poster} alt={data.title} />
             </BannerPoster>
 
             <BannerTexts>
               <Flex dir='column' gap='0px'>
-                <BannerTitle>{data.title}</BannerTitle>
+                <Title>{data.title || data.original_title}</Title>
                 {data.tagline && <BannerTagline>{data.tagline}</BannerTagline>}
                 <Genres
                   genresArr={data.genres.map((g) => g.id)}
@@ -53,10 +52,12 @@ const Info = ({ loading, data }) => {
 
               {data.overview && (
                 <Flex dir='column' gap='5px'>
-                  <OverviewTitle>Overview: </OverviewTitle>
+                  <Title>Overview: </Title>
                   <p>{data.overview}</p>
                 </Flex>
               )}
+
+              <CastAndCrew />
             </BannerTexts>
           </BannerContent>
         </InfoBanner>

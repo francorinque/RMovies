@@ -1,4 +1,5 @@
-import { styled } from 'styled-components'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import { css, styled } from 'styled-components'
 
 export const ButtonGlobal = styled.button`
   border: none;
@@ -19,9 +20,9 @@ export const ButtonGlobal = styled.button`
   }
 `
 
-//sliders
+//carousel
 export const Title = styled.h3`
-  font-size: clamp(18px, 2vw, 25px);
+  font-size: clamp(25px, 3vw, 27px);
   background: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
@@ -42,4 +43,22 @@ export const Top = styled.div`
   @media (min-width: 768px) {
     justify-content: space-between;
   }
+`
+//slides
+
+export const WrapperSlide = styled(Splide)`
+  width: auto !important;
+  height: ${({ h }) => h};
+`
+
+export const Slide = styled(SplideSlide)`
+  width: ${({ w }) => (w ? w : '100%')} !important;
+  height: ${({ h }) => h} !important;
+
+  ${({ rounded }) =>
+    rounded &&
+    css`
+      border-radius: 50%;
+      overflow: hidden;
+    `}
 `

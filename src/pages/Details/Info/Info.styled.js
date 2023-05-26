@@ -19,6 +19,8 @@ export const InfoBanner = styled.div`
 
 export const BannerContent = styled.div`
   width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
   height: 100%;
   display: flex;
   gap: 20px;
@@ -30,7 +32,6 @@ export const BannerContent = styled.div`
   padding: var(--h-header) 20px;
   @media (min-width: 600px) {
     width: 90%;
-    flex-direction: row;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -55,11 +56,6 @@ export const BannerTexts = styled.div`
   padding: 10px 0;
 `
 
-export const BannerTitle = styled.div`
-  font-size: 25px;
-  font-weight: var(--semibold);
-`
-
 export const BannerTagline = styled.span`
   color: var(--color-text-light);
   font-size: 20px;
@@ -67,18 +63,13 @@ export const BannerTagline = styled.span`
 
 export const Flex = styled.div`
   display: flex;
-  flex-direction: ${({ dir }) => (dir ? `${dir}` : 'row')};
-  justify-content: ${({ content }) => (content ? `${content}` : 'center')};
+  flex-direction: ${({ dir }) => (dir ? dir : 'row')};
+  justify-content: ${({ content }) => (content ? content : 'center')};
   align-items: ${({ dir }) => (dir === 'column' ? 'flex-start' : 'center')};
   text-align: initial;
-  gap: ${({ gap }) => (gap ? `${gap}` : '20px')};
-`
+  gap: ${({ gap }) => (gap ? gap : '20px')};
 
-export const OverviewTitle = styled.p`
-  font-size: 20px;
-  font-weight: var(--semibold);
-
-  + p {
+  p {
     color: var(--color-text-light);
   }
 `

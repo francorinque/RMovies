@@ -1,12 +1,13 @@
 .loader {
-  display: block;
-  margin: 50px auto;
+  display: block !important;
+  margin: 200px auto !important;
   transform: translateZ(1px);
 }
 
 .loader:after {
   content: '';
-  display: inline-block;
+  display: block !important;
+  margin: 200px auto !important;
   width: 48px;
   height: 48px;
   margin: 8px;
