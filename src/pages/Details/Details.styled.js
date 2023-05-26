@@ -2,7 +2,6 @@ import { styled } from 'styled-components'
 
 export const Wrapper = styled.div`
   padding: 0 0 50px 0 !important;
-  min-height: 100vh;
   position: relative;
 `
 export const Banner = styled.div`

@@ -13,3 +13,6 @@ export function convertDateFromApi(date) {
     return 'unknow'
   }
 }
+
+// 0:00
+// 12:00

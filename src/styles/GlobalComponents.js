@@ -20,14 +20,14 @@ export const ButtonGlobal = styled.button`
   }
 `
 
-//carousel
 export const Title = styled.h3`
-  font-size: clamp(25px, 3vw, 27px);
+  font-size: clamp(18px, 3vw, 27px);
   background: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `
+//carousel
 
 export const Wrapper = styled.div`
   display: flex;
@@ -38,7 +38,9 @@ export const Wrapper = styled.div`
 
 export const Top = styled.div`
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 
   @media (min-width: 768px) {
     justify-content: space-between;
@@ -61,4 +63,9 @@ export const Slide = styled(SplideSlide)`
       border-radius: 50%;
       overflow: hidden;
     `}
+`
+
+export const Subtitle = styled.h4`
+  font-size: 17px;
+  font-weight: var(--semibold);
 `
