@@ -45,6 +45,9 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     section{
+        max-width: var(--max-w);
+        margin: 0 auto;
         padding: 100px 0;
+
     }
 `

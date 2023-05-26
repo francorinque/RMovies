@@ -1,10 +1,8 @@
 import { css, styled } from 'styled-components'
-import { ButtonGlobal } from '../../../styles/GlobalComponents'
 
 export const FormStyled = styled.form`
   background-color: var(--color-text);
   width: 90%;
-  margin: 0 auto;
   border-radius: var(--radius);
   display: flex;
   justify-content: space-between;
@@ -13,8 +11,12 @@ export const FormStyled = styled.form`
   ${({ inBanner }) =>
     inBanner &&
     css`
-      max-width: 600px;
+      max-width: 800px;
     `}
+
+  button {
+    flex: 1 1 30%;
+  }
 `
 export const FieldInput = styled.div`
   width: 100%;
@@ -33,5 +35,3 @@ export const Input = styled.input`
     opacity: 40%;
   }
 `
-
-export const Btn = styled(ButtonGlobal)``

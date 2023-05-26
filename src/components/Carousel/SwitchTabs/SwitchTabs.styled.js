@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 export const Switch = styled.div`
-  height: 30px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,6 @@ export const Switch = styled.div`
 
 export const Tab = styled.div`
   width: 100px;
-
   z-index: 3;
   text-align: center;
   position: relative;

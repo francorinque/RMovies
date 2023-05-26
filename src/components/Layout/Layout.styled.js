@@ -1,7 +1,6 @@
 import { styled } from 'styled-components'
 
 export const LayoutStyled = styled.div`
-  width: min(var(--max-w), 100%);
-  margin: 0 auto;
+  width: 100%;
   padding: 0 10px;
 `

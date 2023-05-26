@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 
 export const GenresStyled = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: ${({ content }) => (content ? `${content}` : 'center')};
   gap: 10px;
 
   p {
