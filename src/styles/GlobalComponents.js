@@ -1,5 +1,4 @@
-import { Splide, SplideSlide } from '@splidejs/react-splide'
-import { css, styled } from 'styled-components'
+import { styled } from 'styled-components'
 
 export const ButtonGlobal = styled.button`
   border: none;
@@ -47,22 +46,47 @@ export const Top = styled.div`
   }
 `
 //slides
+export const WrapperSlide = styled.div`
+  padding: 20px;
+  width: 100%;
+  display: grid;
+  align-content: center;
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+  grid-auto-rows: max-content;
+  overflow-x: scroll;
+  gap: 20px;
+  margin-top: 10px;
+  user-select: none;
 
-export const WrapperSlide = styled(Splide)`
-  width: auto !important;
-  height: ${({ h }) => h};
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 600px) {
+    &::-webkit-scrollbar {
+      display: block;
+    }
+    &::-webkit-scrollbar {
+      height: 8px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: var(--radius);
+      background-color: var(--color-ui);
+    }
+  }
 `
 
-export const Slide = styled(SplideSlide)`
-  width: ${({ w }) => (w ? w : '100%')} !important;
-  height: ${({ h }) => h} !important;
+export const Slide = styled.div`
+  width: ${({ w }) => w};
+  height: ${({ h }) => h};
+  user-select: none;
 
-  ${({ rounded }) =>
-    rounded &&
-    css`
-      border-radius: 50%;
-      overflow: hidden;
-    `}
+  img {
+    height: 100% !important;
+    border-radius: var(--radius);
+  }
 `
 
 export const Subtitle = styled.h4`

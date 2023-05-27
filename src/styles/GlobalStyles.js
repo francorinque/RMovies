@@ -46,8 +46,8 @@ export const GlobalStyles = createGlobalStyle`
 
     section{
         max-width: var(--max-w);
-        margin: 0 auto;
+        margin-inline:  auto;
         padding: 100px 0;
-
+        width: 100%;
     }
 `

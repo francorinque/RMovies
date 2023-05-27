@@ -3,6 +3,9 @@ import { styled } from 'styled-components'
 export const Wrapper = styled.div`
   padding: 0 0 50px 0 !important;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `
 export const Banner = styled.div`
   position: relative;

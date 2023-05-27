@@ -4,17 +4,20 @@ import { useParams } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
 import Info from './Info/Info.jsx'
 import Videos from './Videos/Videos.jsx'
-import CastAndCrew from './Info/CastAndCrew/CastAndCrew.jsx/CastAndCrew.jsx'
+import Cast from './Info/Cast/Cast.jsx'
 
 const Details = () => {
   const { mediatype, id } = useParams()
   const { loading, data: dataDetails } = useFetch(`/${mediatype}/${id}`)
+  const { loading: loadingVideos, data: dataVideos } = useFetch(
+    `/${mediatype}/${id}/videos`
+  )
 
   return (
     <Wrapper>
       <Info data={dataDetails} loading={loading} />
-      <CastAndCrew />
-      <Videos />
+      <Cast />
+      <Videos dataVideos={dataVideos?.results} loading={loadingVideos} />
       {/* <div>similar</div>
       <div>recommended</div> */}
     </Wrapper>
