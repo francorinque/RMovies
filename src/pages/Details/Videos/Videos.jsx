@@ -1,31 +1,37 @@
+import { useContext } from 'react'
 import Button from '../../../components/UI/Button/Button.jsx'
 import LazyImage from '../../../components/UI/LazyImage/LazyImage.jsx'
 import { Slide, Title, WrapperSlide } from '../../../styles/GlobalComponents.js'
 import { VideoInner, PlayVideo } from './Videos.styled.js'
+import { VideoContext } from '../../../context/VideoContext.jsx'
 
 const Videos = ({ dataVideos, loading }) => {
-  console.log(dataVideos)
+  const { handlePlayVideo } = useContext(VideoContext)
+
+  if (loading) {
+    return <p>LOADING...</p>
+  }
 
   return (
-    !loading && (
-      <section style={{ padding: '0px' }}>
+    dataVideos?.length > 0 && (
+      <>
         <Title>Videos</Title>
         <WrapperSlide>
-          {dataVideos?.map((el) => (
-            <Slide key={el.id} w='max-content' h='max-content'>
+          {dataVideos?.map((v) => (
+            <Slide key={v.id} w='max-content' h='max-content'>
               <VideoInner>
-                <PlayVideo>
+                <PlayVideo onClick={() => handlePlayVideo(v.key)}>
                   <Button>PLAY</Button>
                 </PlayVideo>
                 <LazyImage
-                  src={`https://img.youtube.com/vi/${el.key}/mqdefault.jpg`}
-                  alt={el.name}
+                  src={`https://img.youtube.com/vi/${v.key}/mqdefault.jpg`}
+                  alt={v.name}
                 />
               </VideoInner>
             </Slide>
           ))}
         </WrapperSlide>
-      </section>
+      </>
     )
   )
 }

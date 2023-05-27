@@ -3,9 +3,6 @@ import { styled } from 'styled-components'
 export const Wrapper = styled.div`
   padding: 0 0 50px 0 !important;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
 `
 export const Banner = styled.div`
   position: relative;
@@ -22,9 +19,13 @@ export const Banner = styled.div`
     font-weight: var(--semibold);
   }
 `
-export const WrapperLoader = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+export const WrapperInner = styled.div`
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 10px;
 `

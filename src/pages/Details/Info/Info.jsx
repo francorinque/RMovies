@@ -16,28 +16,29 @@ import Button from '../../../components/UI/Button/Button'
 import { IoPlayCircleSharp } from 'react-icons/io5'
 import LazyImage from '../../../components/UI/LazyImage/LazyImage'
 import { Subtitle, Title } from '../../../styles/GlobalComponents'
-import {
-  convertDateFromApi,
-  convertToHour,
-} from '../../../utils/details.utility'
+import { convertToHour } from '../../../utils/details.utility'
 import { useParams } from 'react-router-dom'
 import useFetch from '../../../hooks/useFetch'
 import dayjs from 'dayjs'
+import { useContext } from 'react'
+import { VideoContext } from '../../../context/VideoContext'
 
-const Info = ({ data }) => {
+const Info = ({ data, dataVideos }) => {
   const { mediatype, id } = useParams()
   const { loading, data: credits } = useFetch(`/${mediatype}/${id}/credits`)
   const { imagesUrl } = useHomeStore((state) => state)
+  const { handlePlayVideo } = useContext(VideoContext)
 
   let bgSrc = imagesUrl.backdrop + data?.backdrop_path
   let poster = imagesUrl.poster + data?.poster_path
   let directorArr = credits?.crew?.filter((el) => el.job === 'Director')
-  let writreArr = credits?.crew?.filter(
-    (el) => el.job === 'Story' || el.job === 'Writer'
-  )
+  let writreArr = credits?.crew
+    ?.filter((el) => el.job === 'Story' || el.job === 'Writer')
+    .slice(0, 3)
 
   let date = data?.release_date || data?.first_air_date
-  console.log(data)
+
+  const trailer = dataVideos?.results?.find((v) => v.type === 'Trailer')
 
   return (
     <div>
@@ -67,9 +68,15 @@ const Info = ({ data }) => {
                   width='70px'
                   percentage={data.vote_average}
                 />
-                <Button w='70' h='70'>
-                  <IoPlayCircleSharp size={25} />
-                </Button>
+                {trailer && (
+                  <Button
+                    w='70'
+                    h='70'
+                    onClick={() => handlePlayVideo(trailer.key)}
+                  >
+                    <IoPlayCircleSharp size={25} />
+                  </Button>
+                )}
               </Flex>
 
               {data.overview && (

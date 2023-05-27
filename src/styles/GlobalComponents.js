@@ -38,7 +38,7 @@ export const Wrapper = styled.div`
 export const Top = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   gap: 20px;
 
   @media (min-width: 768px) {
@@ -56,7 +56,7 @@ export const WrapperSlide = styled.div`
   grid-auto-rows: max-content;
   overflow-x: scroll;
   gap: 20px;
-  margin-top: 10px;
+  margin-top: 5px;
   user-select: none;
 
   &::-webkit-scrollbar {

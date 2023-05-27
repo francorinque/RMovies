@@ -1,11 +1,11 @@
-import { Slide, Title, WrapperSlide } from '../../../../styles/GlobalComponents'
+import { Slide, Title, WrapperSlide } from '../../../styles/GlobalComponents'
 
 import { useParams } from 'react-router-dom'
-import useFetch from '../../../../hooks/useFetch.js'
-import { useHomeStore } from '../../../../store/home.js'
-import Loader from '../../../../components/UI/Loader/Loader.jsx'
-import LazyImage from '../../../../components/UI/LazyImage/LazyImage.jsx'
-import ProfileFallback from '../../../../assets/ProfileFallback.jpg'
+import useFetch from '../../../hooks/useFetch.js'
+import { useHomeStore } from '../../../store/home.js'
+import Loader from '../../../components/UI/Loader/Loader.jsx'
+import LazyImage from '../../../components/UI/LazyImage/LazyImage.jsx'
+import ProfileFallback from '../../../assets/ProfileFallback.jpg'
 
 const Cast = () => {
   const { imagesUrl } = useHomeStore((state) => state)
@@ -18,7 +18,7 @@ const Cast = () => {
 
   return (
     data?.cast.length > 0 && (
-      <section style={{ padding: '0px' }}>
+      <>
         <Title>Top Cast</Title>
         <WrapperSlide>
           {data?.cast.map((person) => {
@@ -32,7 +32,7 @@ const Cast = () => {
             )
           })}
         </WrapperSlide>
-      </section>
+      </>
     )
   )
 }

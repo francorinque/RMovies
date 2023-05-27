@@ -1,10 +1,11 @@
-import { Wrapper } from './Details.styled.js'
+import { Wrapper, WrapperInner } from './Details.styled.js'
 
 import { useParams } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
 import Info from './Info/Info.jsx'
 import Videos from './Videos/Videos.jsx'
-import Cast from './Info/Cast/Cast.jsx'
+import Cast from './Cast/Cast.jsx'
+import OverlayVideo from '../../components/OverlayVideo/OverlayVideo.jsx'
 
 const Details = () => {
   const { mediatype, id } = useParams()
@@ -14,13 +15,16 @@ const Details = () => {
   )
 
   return (
-    <Wrapper>
-      <Info data={dataDetails} loading={loading} />
-      <Cast />
-      <Videos dataVideos={dataVideos?.results} loading={loadingVideos} />
-      {/* <div>similar</div>
-      <div>recommended</div> */}
-    </Wrapper>
+    <>
+      <OverlayVideo />
+      <Wrapper>
+        <Info data={dataDetails} loading={loading} dataVideos={dataVideos} />
+        <WrapperInner>
+          <Cast />
+          <Videos dataVideos={dataVideos?.results} loading={loadingVideos} />
+        </WrapperInner>
+      </Wrapper>
+    </>
   )
 }
 export default Details

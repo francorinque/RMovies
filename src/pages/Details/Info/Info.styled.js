@@ -41,7 +41,7 @@ export const BannerContent = styled.div`
 `
 
 export const BannerPoster = styled.div`
-  width: 100%;
+  width: 95%;
   max-width: 400px;
   border-radius: var(--radius);
   margin: 0 auto;
@@ -56,7 +56,7 @@ export const BannerTexts = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px 0;
+  padding: 10px;
 `
 
 export const BannerTagline = styled.span`
