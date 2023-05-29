@@ -125,7 +125,7 @@ export const NavSearchIcon = styled.div`
 
 export const WrapperSearch = styled.div`
   width: 100%;
-  max-width: 1300px;
+  max-width: 80%;
   position: fixed;
   border-radius: var(--radius);
   overflow: hidden;

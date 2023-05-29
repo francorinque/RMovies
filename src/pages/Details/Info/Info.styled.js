@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const InfoBanner = styled.div`
   width: 100%;
+
   position: relative;
 `
 
@@ -26,33 +27,35 @@ export const BannerContent = styled.div`
   width: 100%;
   max-width: var(--max-w);
   margin-inline: auto;
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-  padding: var(--h-header) 0;
+  min-height: 100vh;
+  padding: calc(var(--h-header) + 30px) 10px;
   position: relative;
   z-index: 2;
-  @media (min-width: 600px) {
-    flex-direction: row;
-    gap: 40px;
-    padding-left: 50px;
-    padding-right: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 700px) {
+    grid-template-columns: 400px 1fr;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 998px) {
+    grid-template-columns: 400px 480px;
   }
 `
 
 export const BannerPoster = styled.div`
-  width: 95%;
-  max-width: 400px;
+  width: 100%;
   border-radius: var(--radius);
-  margin: 0 auto;
-
   img {
     border-radius: var(--radius);
   }
 `
 
 export const BannerTexts = styled.div`
-  width: 100%;
+  width: 90%;
+
   display: flex;
   flex-direction: column;
   gap: 10px;

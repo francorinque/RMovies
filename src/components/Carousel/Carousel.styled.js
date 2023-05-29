@@ -13,7 +13,7 @@ export const CarouselItems = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 300px;
-  grid-auto-rows: 100%;
+  grid-auto-rows: var(--h-card);
   column-gap: 20px;
   overflow-x: scroll;
   &::-webkit-scrollbar {

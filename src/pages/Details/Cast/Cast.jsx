@@ -12,21 +12,21 @@ const Cast = () => {
   const { mediatype, id } = useParams()
   const { loading, data } = useFetch(`/${mediatype}/${id}/credits`)
 
-  if (loading) {
-    return <Loader />
-  }
+  // if (loading) {
+  //   return <Loader />
+  // }
 
   return (
     data?.cast.length > 0 && (
       <>
         <Title>Top Cast</Title>
-        <WrapperSlide>
+        <WrapperSlide h='140px'>
           {data?.cast.map((person) => {
             let imgUrl = person.profile_path
               ? imagesUrl.profile + person.profile_path
               : ProfileFallback
             return (
-              <Slide key={person.id} w='150px' h='max-content'>
+              <Slide key={person.id} w='90px' h='140px'>
                 <LazyImage src={imgUrl} alt={person.name} />
               </Slide>
             )

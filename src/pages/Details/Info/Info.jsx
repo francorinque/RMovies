@@ -22,10 +22,13 @@ import useFetch from '../../../hooks/useFetch'
 import dayjs from 'dayjs'
 import { useContext } from 'react'
 import { VideoContext } from '../../../context/VideoContext'
+import Loader from '../../../components/UI/Loader/Loader'
 
-const Info = ({ data, dataVideos }) => {
+const Info = ({ data, dataVideos, loading }) => {
   const { mediatype, id } = useParams()
-  const { loading, data: credits } = useFetch(`/${mediatype}/${id}/credits`)
+  const { loading: loadingCredits, data: credits } = useFetch(
+    `/${mediatype}/${id}/credits`
+  )
   const { imagesUrl } = useHomeStore((state) => state)
   const { handlePlayVideo } = useContext(VideoContext)
 
@@ -37,7 +40,6 @@ const Info = ({ data, dataVideos }) => {
     .slice(0, 3)
 
   let date = data?.release_date || data?.first_air_date
-
   const trailer = dataVideos?.results?.find((v) => v.type === 'Trailer')
 
   return (
@@ -101,7 +103,7 @@ const Info = ({ data, dataVideos }) => {
                     {convertToHour(data.runtime || data.episode_run_time[0])}
                   </span>
                 </Flex>
-                {!loading && directorArr?.length > 0 && (
+                {!loadingCredits && directorArr?.length > 0 && (
                   <Flex content='flex-start'>
                     <Subtitle>Director:</Subtitle>
                     {directorArr.map((el, idx) => (
@@ -112,7 +114,7 @@ const Info = ({ data, dataVideos }) => {
                     ))}
                   </Flex>
                 )}
-                {!loading && writreArr?.length > 0 && (
+                {!loadingCredits && writreArr?.length > 0 && (
                   <Flex content='flex-start'>
                     <Subtitle>Write:</Subtitle>
                     {writreArr.map((el, idx) => (

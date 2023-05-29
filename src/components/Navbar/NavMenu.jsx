@@ -6,8 +6,8 @@ import { MenuContext } from '../../context/MenuContext'
 
 const myLinks = [
   { id: 1, text: 'Home', to: '/', icon: <IoHomeOutline /> },
-  { id: 2, text: 'Movies', to: '/movies', icon: <IoPlayOutline /> },
-  { id: 3, text: 'Tv show', to: '/tv-show', icon: <IoTvOutline /> },
+  { id: 2, text: 'Movies', to: '/discover/movie', icon: <IoPlayOutline /> },
+  { id: 3, text: 'Tv show', to: '/discover/tv', icon: <IoTvOutline /> },
 ]
 
 const NavMenu = () => {

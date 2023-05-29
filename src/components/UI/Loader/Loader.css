@@ -1,13 +1,13 @@
 .loader {
   display: block !important;
-  margin: 200px auto !important;
+  margin: 20px auto !important;
   transform: translateZ(1px);
 }
 
 .loader:after {
   content: '';
   display: block !important;
-  margin: 200px auto !important;
+  margin: 0 auto !important;
   width: 48px;
   height: 48px;
   margin: 8px;

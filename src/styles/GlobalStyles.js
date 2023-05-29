@@ -26,6 +26,7 @@ export const GlobalStyles = createGlobalStyle`
         --bold: 800;
         --radius: 8px;
         --max-w: 1300px;
+        --h-card: 400px;
     }
 
     body{

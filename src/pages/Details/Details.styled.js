@@ -29,3 +29,7 @@ export const WrapperInner = styled.div`
   gap: 30px;
   padding: 0 10px;
 `
+
+export const WrapperLoader = styled.div`
+  margin: 100px;
+`

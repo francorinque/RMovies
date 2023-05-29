@@ -1,5 +1,15 @@
 import { styled } from 'styled-components'
 
+export const GridCards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  grid-auto-rows: var(--h-card);
+  row-gap: 50px;
+  column-gap: 10px;
+  place-content: center;
+  justify-content: space-evenly;
+`
+
 export const ButtonGlobal = styled.button`
   border: none;
   outline: none;
@@ -58,6 +68,7 @@ export const WrapperSlide = styled.div`
   gap: 20px;
   margin-top: 5px;
   user-select: none;
+  min-height: ${({ h }) => h};
 
   &::-webkit-scrollbar {
     display: none;
@@ -80,6 +91,7 @@ export const WrapperSlide = styled.div`
 
 export const Slide = styled.div`
   width: ${({ w }) => w};
+  min-width: ${({ w }) => w};
   height: ${({ h }) => h};
   user-select: none;
 

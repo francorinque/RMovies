@@ -1,10 +1,10 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
+import 'react-lazy-load-image-component/src/effects/opacity.css'
 
 const LazyImage = ({ src, alt }) => {
   return (
     <LazyLoadImage
-      effect='blur'
+      effect='opacity'
       src={src}
       alt={alt}
       width='100%'

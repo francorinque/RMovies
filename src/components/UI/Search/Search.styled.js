@@ -2,7 +2,7 @@ import { css, styled } from 'styled-components'
 
 export const FormStyled = styled.form`
   background-color: var(--color-text);
-  width: 90%;
+  width: 100%;
   border-radius: var(--radius);
   display: flex;
   justify-content: space-between;
@@ -15,11 +15,11 @@ export const FormStyled = styled.form`
     `}
 
   button {
-    flex: 1 1 30%;
+    flex: 1;
   }
 `
 export const FieldInput = styled.div`
-  width: 100%;
+  flex: 2;
 `
 
 export const Input = styled.input`

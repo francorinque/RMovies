@@ -7,6 +7,7 @@ specifiers:
   '@vitejs/plugin-react': ^4.0.0
   axios: ^1.4.0
   dayjs: ^1.11.7
+  debounce: ^1.2.1
   eslint: ^8.38.0
   eslint-plugin-react: ^7.32.2
   eslint-plugin-react-hooks: ^4.6.0
@@ -28,6 +29,7 @@ dependencies:
   '@splidejs/react-splide': 0.7.12
   axios: 1.4.0
   dayjs: 1.11.7
+  debounce: 1.2.1
   framer-motion: 10.12.14
   react: 18.2.0
   react-circular-progressbar: 2.1.0
@@ -2030,6 +2032,10 @@ packages:
 
   /dayjs/1.11.7:
     resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
+    dev: false
+
+  /debounce/1.2.1:
+    resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
     dev: false
 
   /debug/4.3.4:

@@ -4,21 +4,22 @@ import LazyImage from '../../../components/UI/LazyImage/LazyImage.jsx'
 import { Slide, Title, WrapperSlide } from '../../../styles/GlobalComponents.js'
 import { VideoInner, PlayVideo } from './Videos.styled.js'
 import { VideoContext } from '../../../context/VideoContext.jsx'
+import Loader from '../../../components/UI/Loader/Loader.jsx'
 
 const Videos = ({ dataVideos, loading }) => {
   const { handlePlayVideo } = useContext(VideoContext)
 
   if (loading) {
-    return <p>LOADING...</p>
+    return <Loader />
   }
 
   return (
     dataVideos?.length > 0 && (
       <>
         <Title>Videos</Title>
-        <WrapperSlide>
-          {dataVideos?.map((v) => (
-            <Slide key={v.id} w='max-content' h='max-content'>
+        <WrapperSlide h='160px'>
+          {dataVideos.map((v) => (
+            <Slide key={v.id} w='290px' h='160px'>
               <VideoInner>
                 <PlayVideo onClick={() => handlePlayVideo(v.key)}>
                   <Button>PLAY</Button>

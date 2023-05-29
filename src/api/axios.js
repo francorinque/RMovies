@@ -19,14 +19,20 @@ export const fetchDataFromApi = async (url) => {
   }
 }
 
-export const getDataPage = async (query, pageParam = 1, options = {}) => {
+export const getResultsData = async (query, page = 1) => {
   try {
-    const { data } = await API.get(
-      `/search/multi?query=${query}&page=${pageParam}`,
-      { options }
-    )
+    const { data } = await API.get(`/search/multi?query=${query}&page=${page}`)
     return data
   } catch (error) {
-    console.log(error)
+    return error
+  }
+}
+
+export const getDiscoverData = async (page = 1, mediatype) => {
+  try {
+    const { data } = await API.get(`/discover/${mediatype}?page=${page}`)
+    return data
+  } catch (error) {
+    return error.message
   }
 }
