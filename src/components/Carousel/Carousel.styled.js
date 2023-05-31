@@ -16,6 +16,7 @@ export const CarouselItems = styled.div`
   grid-auto-rows: var(--h-card);
   column-gap: 20px;
   overflow-x: scroll;
+  align-content: center;
   &::-webkit-scrollbar {
     display: none;
   }

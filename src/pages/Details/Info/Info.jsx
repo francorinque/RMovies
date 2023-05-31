@@ -6,7 +6,6 @@ import {
   BannerTagline,
   Flex,
   InfoBannerBg,
-  FlexResponsive,
 } from './Info.styled'
 
 import { useHomeStore } from '../../../store/home'
@@ -15,31 +14,22 @@ import CircleProgressbar from '../../../components/UI/CircleProgressbar/CirclePr
 import Button from '../../../components/UI/Button/Button'
 import { IoPlayCircleSharp } from 'react-icons/io5'
 import LazyImage from '../../../components/UI/LazyImage/LazyImage'
-import { Subtitle, Title } from '../../../styles/GlobalComponents'
-import { convertToHour } from '../../../utils/details.utility'
+import { Title } from '../../../styles/GlobalComponents'
 import { useParams } from 'react-router-dom'
 import useFetch from '../../../hooks/useFetch'
-import dayjs from 'dayjs'
 import { useContext } from 'react'
 import { VideoContext } from '../../../context/VideoContext'
-import Loader from '../../../components/UI/Loader/Loader'
+import InfoDate from './InfoDate'
 
-const Info = ({ data, dataVideos, loading }) => {
+const Info = ({ data, dataVideos }) => {
   const { mediatype, id } = useParams()
   const { loading: loadingCredits, data: credits } = useFetch(
     `/${mediatype}/${id}/credits`
   )
   const { imagesUrl } = useHomeStore((state) => state)
   const { handlePlayVideo } = useContext(VideoContext)
-
   let bgSrc = imagesUrl.backdrop + data?.backdrop_path
   let poster = imagesUrl.poster + data?.poster_path
-  let directorArr = credits?.crew?.filter((el) => el.job === 'Director')
-  let writreArr = credits?.crew
-    ?.filter((el) => el.job === 'Story' || el.job === 'Writer')
-    .slice(0, 3)
-
-  let date = data?.release_date || data?.first_air_date
   const trailer = dataVideos?.results?.find((v) => v.type === 'Trailer')
 
   return (
@@ -59,13 +49,10 @@ const Info = ({ data, dataVideos, loading }) => {
               <Flex dir='column' gap='0px'>
                 <Title>{data.title || data.original_title}</Title>
                 {data.tagline && <BannerTagline>{data.tagline}</BannerTagline>}
-                <Genres
-                  genresArr={data.genres.map((g) => g.id)}
-                  content='flex-start'
-                />
+                <Genres genresArr={data.genres.map((g) => g.id)} />
               </Flex>
 
-              <Flex content='flex-start'>
+              <Flex>
                 <CircleProgressbar
                   width='70px'
                   percentage={data.vote_average}
@@ -88,44 +75,7 @@ const Info = ({ data, dataVideos, loading }) => {
                 </Flex>
               )}
 
-              <FlexResponsive content='flex-start' gap='20px'>
-                <Flex content='flex-start'>
-                  <Subtitle>Status:</Subtitle>
-                  <span>{data.status}</span>
-                </Flex>
-                <Flex content='flex-start'>
-                  <Subtitle>Release Date:</Subtitle>
-                  <span>{dayjs(date).format('MMM D, YYYY')}</span>
-                </Flex>
-                <Flex content='flex-start'>
-                  <Subtitle>Runtime:</Subtitle>
-                  <span>
-                    {convertToHour(data.runtime || data.episode_run_time[0])}
-                  </span>
-                </Flex>
-                {!loadingCredits && directorArr?.length > 0 && (
-                  <Flex content='flex-start'>
-                    <Subtitle>Director:</Subtitle>
-                    {directorArr.map((el, idx) => (
-                      <span key={el.id}>
-                        {el.name}
-                        {idx !== directorArr.length - 1 && ','}
-                      </span>
-                    ))}
-                  </Flex>
-                )}
-                {!loadingCredits && writreArr?.length > 0 && (
-                  <Flex content='flex-start'>
-                    <Subtitle>Write:</Subtitle>
-                    {writreArr.map((el, idx) => (
-                      <span key={el.id}>
-                        {el.name}
-                        {idx !== writreArr.length - 1 && ','}
-                      </span>
-                    ))}
-                  </Flex>
-                )}
-              </FlexResponsive>
+              <InfoDate data={data} credits={credits} />
             </BannerTexts>
           </BannerContent>
         </InfoBanner>

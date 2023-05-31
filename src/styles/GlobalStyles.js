@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
         --color-bg: #2b2a2a;
         --color-bg-dark: #181818;
         --color-text: #efefef;
-        --color-text-light: #c9c9c9;
+        --color-text-light: #797979;
         --color-ui : #BE3A34;
         --gradient: linear-gradient(90deg, #852824 ,var(--color-ui));
         --gradient-overlay: linear-gradient(

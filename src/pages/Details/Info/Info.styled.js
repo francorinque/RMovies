@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const InfoBanner = styled.div`
   width: 100%;
-
   position: relative;
 `
 
@@ -35,31 +34,30 @@ export const BannerContent = styled.div`
   grid-template-columns: 1fr;
 
   @media (min-width: 700px) {
-    grid-template-columns: 400px 1fr;
-    justify-items: center;
+    grid-template-columns: 400px 550px;
+    grid-auto-rows: max-content;
+    gap: 10px;
     justify-content: center;
-  }
-
-  @media (min-width: 998px) {
-    grid-template-columns: 400px 480px;
   }
 `
 
 export const BannerPoster = styled.div`
   width: 100%;
-  border-radius: var(--radius);
+  margin-inline: auto;
+
   img {
     border-radius: var(--radius);
   }
 `
 
 export const BannerTexts = styled.div`
-  width: 90%;
-
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   padding: 10px;
+  max-width: 600px;
+  justify-content: flex-start;
 `
 
 export const BannerTagline = styled.span`
@@ -71,26 +69,22 @@ export const Flex = styled.div`
   width: 100%;
   display: flex;
   flex-direction: ${({ dir }) => (dir ? dir : 'row')};
-  justify-content: ${({ content }) => (content ? content : 'center')};
-  align-items: ${({ dir }) => (dir === 'column' ? 'flex-start' : 'center')};
+  justify-content: flex-start;
   text-align: initial;
   gap: ${({ gap }) => (gap ? gap : '20px')};
 
   p {
     color: var(--color-text-light);
+    max-width: 700px;
   }
 `
 
-export const FlexResponsive = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: ${({ content }) => (content ? content : 'center')};
-  align-items: ${({ dir }) => (dir === 'column' ? 'flex-start' : 'center')};
-  text-align: initial;
-  gap: ${({ gap }) => (gap ? gap : '20px')};
-
-  @media (min-width: 600px) {
-    flex-direction: row;
+export const InfoDateStyled = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  @media (width > 600px) {
+    column-gap: 20px;
+    grid-template-columns: repeat(2, max-content);
   }
 `

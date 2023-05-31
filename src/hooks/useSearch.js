@@ -28,7 +28,8 @@ export const useSearch = () => {
 
   const handleChange = (e) => {
     let { value } = e.target
-    setQuery(value)
+    let queryRedeable = value.trim().split(' ').join('')
+    setQuery(queryRedeable)
   }
 
   return { query, handleSubmit, handleChange }

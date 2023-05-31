@@ -5,7 +5,7 @@ export const useNavbar = () => {
   const [showHeader, setShowHeader] = useState('top')
 
   const controlNavbar = useCallback(() => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 0) {
       if (window.scrollY > lastScrollY) {
         setShowHeader('hide')
       } else {

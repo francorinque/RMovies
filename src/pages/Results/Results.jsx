@@ -7,6 +7,7 @@ import ResultsCard from './ResultsCard'
 import { useParams } from 'react-router-dom'
 import { v4 as uid } from 'uuid'
 import { useResults } from '../../hooks/useResults'
+import { NoResults } from './Results.styled'
 
 const Results = () => {
   const { query } = useParams()
@@ -14,6 +15,14 @@ const Results = () => {
 
   const renderCard = (item) => {
     return <ResultsCard item={item} key={uid()} />
+  }
+
+  if (!data.length < 0) {
+    return (
+      <NoResults>
+        <p>{`No results for ${query}`}</p>
+      </NoResults>
+    )
   }
 
   return (
