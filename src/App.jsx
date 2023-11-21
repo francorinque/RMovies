@@ -1,11 +1,12 @@
-import { GlobalStyles } from './styles/GlobalStyles'
+import { GlobalStyles } from "./styles/GlobalStyles"
 
-import { BrowserRouter } from 'react-router-dom'
-import Routes from './routes/Routes'
-import { useEffect } from 'react'
-import { useHomeStore } from './store/home'
+import { BrowserRouter } from "react-router-dom"
+import Routes from "./routes/Routes"
+import { useEffect } from "react"
+import { useHomeStore } from "./store/home"
 //components
-import { Layout, Navbar } from './components'
+import { Layout, Navbar } from "./components"
+import Footer from "./components/Footer/Footer"
 
 function App() {
   const { setGenres, setImagesUrl } = useHomeStore((state) => state)
@@ -25,6 +26,7 @@ function App() {
         <Navbar />
         <Layout>
           <Routes />
+          <Footer />
         </Layout>
       </BrowserRouter>
     </>

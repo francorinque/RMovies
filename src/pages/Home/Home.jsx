@@ -1,11 +1,11 @@
-import { Container, HomeStyled } from './Home.styled'
+import { Container, HomeStyled } from "./Home.styled"
 
 import {
   Banner,
   SlidePopular,
-  SlideTrending,
   SlideTopRated,
-} from '../../components'
+  SlideTrending,
+} from "../../components"
 
 const Home = () => {
   return (
