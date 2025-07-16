@@ -1,16 +1,16 @@
-import { CardStyled, Info } from './Card.styled.js'
+import { CardStyled, Info } from "./Card.styled.js";
 
-import { useHomeStore } from '../../../store/home'
+import { useHomeStore } from "../../../store/home";
 
-import CircleProgressbar from '../CircleProgressbar/CircleProgressbar'
-import LazyImage from '../LazyImage/LazyImage'
-import PosterFallback from '../../../assets/no-poster.png'
-import Genres from '../Genres/Genres.jsx'
-import { useNavigate } from 'react-router-dom'
+import CircleProgressbar from "../CircleProgressbar/CircleProgressbar";
+import LazyImage from "../LazyImage/LazyImage";
+import PosterFallback from "../../../assets/no-poster.png";
+import Genres from "../Genres/Genres.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ item, mediatypeFallback }) => {
-  const navigate = useNavigate()
-  const { imagesUrl } = useHomeStore((state) => state)
+  const navigate = useNavigate();
+  const { imagesUrl } = useHomeStore((state) => state);
   const {
     id,
     title,
@@ -19,12 +19,12 @@ const Card = ({ item, mediatypeFallback }) => {
     genre_ids,
     vote_average,
     media_type,
-  } = item
-  let imgSrc = `${imagesUrl.poster}${poster_path}`
+  } = item;
+  let imgSrc = `${imagesUrl.poster}${poster_path}`;
 
   const handleDetails = (type, id) => {
-    navigate(`/details/${type || mediatypeFallback}/${id}`)
-  }
+    navigate(`/details/${type || mediatypeFallback}/${id}`);
+  };
 
   return (
     <CardStyled onClick={() => handleDetails(media_type, id)}>
@@ -39,13 +39,13 @@ const Card = ({ item, mediatypeFallback }) => {
       )}
 
       <div
-        style={{ position: 'absolute', right: '5px', top: '5px', zIndex: '4' }}
+        style={{ position: "absolute", right: "5px", top: "5px", zIndex: "4" }}
       >
         {vote_average && (
-          <CircleProgressbar percentage={vote_average} width='50px' />
+          <CircleProgressbar percentage={vote_average} width="50px" />
         )}
       </div>
     </CardStyled>
-  )
-}
-export default Card
+  );
+};
+export default Card;

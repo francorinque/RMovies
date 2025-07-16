@@ -1,4 +1,4 @@
-import { FooterSocialStyled, FooterStyled } from "./Footer.styled"
+import { FooterSocialStyled, FooterStyled } from "./Footer.styled";
 
 const Footer = () => {
   return (
@@ -8,10 +8,22 @@ const Footer = () => {
       </p>
 
       <FooterSocialStyled>
-        <a href="https://github.com/francorinque">Github</a>
-        <a href="https://www.linkedin.com/in/francorinque">Linkedin</a>
+        <a
+          href="https://github.com/francorinque"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github
+        </a>
+        <a
+          href="https://www.linkedin.com/in/francorinque"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Linkedin
+        </a>
       </FooterSocialStyled>
     </FooterStyled>
-  )
-}
-export default Footer
+  );
+};
+export default Footer;

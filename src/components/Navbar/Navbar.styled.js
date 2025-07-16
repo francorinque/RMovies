@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom'
-import { css, styled } from 'styled-components'
+import { NavLink } from "react-router-dom";
+import { css, styled } from "styled-components";
 
 export const Header = styled.header`
   height: var(--h-header);
@@ -10,39 +10,39 @@ export const Header = styled.header`
   z-index: 99;
   transition: ease 0.3s;
   background: ${({ showmenu, showinput }) =>
-    showinput === 'true' || showmenu === 'true' ? 'var(--color-bg)' : 'none'};
+    showinput === "true" || showmenu === "true" ? "var(--color-bg)" : "none"};
 
   ${({ showheader }) => {
     switch (showheader) {
-      case 'hide':
+      case "hide":
         return css`
           translate: 0 -200px;
           transition: ease 0.3s;
-        `
-      case 'show':
+        `;
+      case "show":
         return css`
           background: #0005005d;
           backdrop-filter: blur(3.5px);
           transition: ease 0.3s;
-        `
+        `;
       default:
         css`
           background: none;
           translate: none;
-        `
+        `;
     }
   }}
-`
+`;
 
 export const Nav = styled.nav`
-  width: min(1300px, 100%);
+  width: min(1440px, 100%);
   height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-`
+`;
 
 export const NavToggle = styled.div`
   display: block;
@@ -50,7 +50,7 @@ export const NavToggle = styled.div`
   @media (min-width: 768px) {
     display: none;
   }
-`
+`;
 
 export const Menu = styled.div`
   background-color: var(--color-bg);
@@ -63,7 +63,7 @@ export const Menu = styled.div`
   flex-direction: column;
   gap: 20px;
   padding: 20px 0;
-  translate: ${({ show }) => (show === 'true' ? '0px' : '600px')};
+  translate: ${({ show }) => (show === "true" ? "0px" : "600px")};
   transition: translate ease 0.4s;
 
   @media (min-width: 768px) {
@@ -75,7 +75,7 @@ export const Menu = styled.div`
     width: 100%;
     justify-content: flex-end;
   }
-`
+`;
 
 export const MenuItem = styled(NavLink)`
   width: 100%;
@@ -103,7 +103,7 @@ export const MenuItem = styled(NavLink)`
     align-items: center;
     justify-content: flex-start;
   }
-`
+`;
 
 export const NavSearchIcon = styled.div`
   cursor: pointer;
@@ -121,7 +121,7 @@ export const NavSearchIcon = styled.div`
   @media (min-width: 768px) {
     margin-left: 20px;
   }
-`
+`;
 
 export const WrapperSearch = styled.div`
   width: 100%;
@@ -130,8 +130,8 @@ export const WrapperSearch = styled.div`
   border-radius: var(--radius);
   overflow: hidden;
   top: ${({ showsearch }) =>
-    showsearch === 'true' ? 'var(--h-header)' : '-200px'};
+    showsearch === "true" ? "var(--h-header)" : "-200px"};
   left: 50%;
   transform: translateX(-50%);
   transition: ease 0.3s;
-`
+`;

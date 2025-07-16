@@ -1,7 +1,8 @@
-import { styled } from 'styled-components'
-import { GridCards } from '../../styles/GlobalComponents'
+import { styled } from "styled-components";
+import { GridCards } from "../../styles/GlobalComponents";
 
 export const DiscoverStyled = styled(GridCards)`
   width: 100%;
-  padding: calc(var(--h-header) + 50px) 0;
-`
+  min-height: 100vh;
+  padding: calc(var(--h-header) + 70px) 0;
+`;

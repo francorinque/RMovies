@@ -1,11 +1,9 @@
-import { styled } from 'styled-components'
+import { styled } from "styled-components";
 
 export const CarouselStyled = styled.div`
   position: relative;
-  width: 90%;
-  max-width: var(--max-w);
-  margin: 0 auto;
-`
+  width: 100%;
+`;
 
 export const CarouselItems = styled.div`
   width: 100%;
@@ -20,4 +18,4 @@ export const CarouselItems = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-`
+`;

@@ -1,6 +1,8 @@
-import { styled } from 'styled-components'
+import { styled } from "styled-components";
 
 export const LayoutStyled = styled.div`
-  width: 100%;
-  padding: 0 10px;
-`
+  min-height: 100vh;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 0 20px;
+`;

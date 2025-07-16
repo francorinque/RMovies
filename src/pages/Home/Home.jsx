@@ -1,22 +1,17 @@
-import { Container, HomeStyled } from "./Home.styled"
+import { HomeStyled } from "./Home.styled";
 
-import {
-  Banner,
-  SlidePopular,
-  SlideTopRated,
-  SlideTrending,
-} from "../../components"
+import { SlidePopular, SlideTopRated, SlideTrending } from "../../components";
+import Layout from "../../components/Layout/Layout";
 
 const Home = () => {
   return (
-    <HomeStyled>
-      <Banner />
-      <Container>
+    <Layout>
+      <HomeStyled>
         <SlideTrending />
         <SlidePopular />
         <SlideTopRated />
-      </Container>
-    </HomeStyled>
-  )
-}
-export default Home
+      </HomeStyled>
+    </Layout>
+  );
+};
+export default Home;

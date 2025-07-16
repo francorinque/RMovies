@@ -1,9 +1,9 @@
-import { styled } from 'styled-components'
+import { styled } from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 0 0 50px 0 !important;
   position: relative;
-`
+`;
 export const Banner = styled.div`
   position: relative;
 
@@ -18,7 +18,7 @@ export const Banner = styled.div`
     font-size: 20px;
     font-weight: var(--semibold);
   }
-`
+`;
 
 export const WrapperInner = styled.div`
   width: 100%;
@@ -28,8 +28,11 @@ export const WrapperInner = styled.div`
   flex-direction: column;
   gap: 30px;
   padding: 0 10px;
-`
+`;
 
 export const WrapperLoader = styled.div`
   margin: 100px;
-`
+  height: 50vh;
+  display: grid;
+  place-content: center;
+`;

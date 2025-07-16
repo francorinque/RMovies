@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import { styled } from "styled-components";
 
 export const GridCards = styled.div`
   display: grid;
@@ -8,7 +8,7 @@ export const GridCards = styled.div`
   column-gap: 10px;
   place-content: center;
   justify-content: space-evenly;
-`
+`;
 
 export const ButtonGlobal = styled.button`
   border: none;
@@ -27,7 +27,7 @@ export const ButtonGlobal = styled.button`
     transition: transform ease-in 0.1s;
     transform: scale(0.95);
   }
-`
+`;
 
 export const Title = styled.h3`
   font-size: clamp(18px, 3vw, 27px);
@@ -35,14 +35,14 @@ export const Title = styled.h3`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-`
+`;
 //carousel
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-`
+  margin-top: 50px;
+`;
 
 export const Top = styled.div`
   display: flex;
@@ -53,7 +53,7 @@ export const Top = styled.div`
   @media (min-width: 768px) {
     justify-content: space-between;
   }
-`
+`;
 //slides
 export const WrapperSlide = styled.div`
   padding: 20px;
@@ -86,7 +86,7 @@ export const WrapperSlide = styled.div`
       background-color: var(--color-ui);
     }
   }
-`
+`;
 
 export const Slide = styled.div`
   width: ${({ w }) => w};
@@ -98,9 +98,9 @@ export const Slide = styled.div`
     height: 100% !important;
     border-radius: var(--radius);
   }
-`
+`;
 
 export const Subtitle = styled.h4`
   font-size: 17px;
   font-weight: var(--semibold);
-`
+`;

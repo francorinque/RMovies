@@ -1,28 +1,28 @@
-import { Wrapper, WrapperInner, WrapperLoader } from './Details.styled.js'
+import { Wrapper, WrapperInner, WrapperLoader } from "./Details.styled.js";
 
-import { useParams } from 'react-router-dom'
-import useFetch from '../../hooks/useFetch'
-import Info from './Info/Info.jsx'
-import Videos from './Videos/Videos.jsx'
-import Cast from './Cast/Cast.jsx'
-import OverlayVideo from '../../components/OverlayVideo/OverlayVideo.jsx'
-import Loader from '../../components/UI/Loader/Loader.jsx'
+import { useParams } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
+import Info from "./Info/Info.jsx";
+import Videos from "./Videos/Videos.jsx";
+import Cast from "./Cast/Cast.jsx";
+import OverlayVideo from "../../components/OverlayVideo/OverlayVideo.jsx";
+import Loader from "../../components/UI/Loader/Loader.jsx";
 
 const Details = () => {
-  const { mediatype, id } = useParams()
+  const { mediatype, id } = useParams();
   const { loading: loadingDetails, data: dataDetails } = useFetch(
-    `/${mediatype}/${id}`
-  )
+    `/${mediatype}/${id}`,
+  );
   const { loading: loadingVideos, data: dataVideos } = useFetch(
-    `/${mediatype}/${id}/videos`
-  )
+    `/${mediatype}/${id}/videos`,
+  );
 
   if (loadingDetails) {
     return (
       <WrapperLoader>
         <Loader />
       </WrapperLoader>
-    )
+    );
   }
 
   return (
@@ -40,6 +40,6 @@ const Details = () => {
         </Wrapper>
       </>
     )
-  )
-}
-export default Details
+  );
+};
+export default Details;
