@@ -18,13 +18,14 @@ Ofrece una experiencia interactiva con **animaciones fluidas**, **estilos person
 
 ---
 
-## 🛠️ Tecnologías utilizadas  
+## 🛠️ Tecnologías utilizadas
 
-- **Frontend:** [React](https://react.dev/), JavaScript  
-- **Estilos:** [Styled Components](https://styled-components.com/)  
-- **Animaciones:** [Framer Motion](https://www.framer.com/motion/)  
-- **Consumo de API:** [Axios](https://axios-http.com/)  
-- **Fuente de datos:** [The Movie Database (TMDB API)](https://developer.themoviedb.org/)  
+- **Frontend:** [React](https://react.dev/), [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript)
+- **Estilos:** [Styled Components](https://styled-components.com/)
+- **Animaciones:** [Framer Motion](https://www.framer.com/motion/)
+- **Consumo de API:** [Axios](https://axios-http.com/)
+- **Fuente de datos:** [The Movie Database (TMDB API)](https://developer.themoviedb.org/)
+
 
 ## 📦 Instalación y ejecución  
 
