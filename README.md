@@ -3,7 +3,7 @@
 Aplicación web que consume la API de [TMDB](https://www.themoviedb.org/) para mostrar películas y series de televisión.  
 Ofrece una experiencia interactiva con **animaciones fluidas**, **estilos personalizados** y **optimización de carga** para mejorar el rendimiento y la usabilidad.  
 
-![Preview](./preview.png) <!-- agrega una imagen o gif de la app -->
+![Preview](https://res.cloudinary.com/dgdcfmnnx/image/upload/v1757284147/rmovies-Bx-pLRhl_hmr1nu.png) <!-- agrega una imagen o gif de la app -->
 
 ---
 
