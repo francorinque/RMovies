@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components'
 
 export const FooterStyled = styled.footer`
   width: 100%;
@@ -7,11 +7,11 @@ export const FooterStyled = styled.footer`
   flex-direction: column;
   gap: 15px;
   align-items: center;
-`;
+`
 
 export const FooterSocialStyled = styled.div`
   display: flex;
-  gap: 30px;
+  gap: 10px;
   align-items: center;
 
   a {
@@ -25,4 +25,4 @@ export const FooterSocialStyled = styled.div`
       transition: all ease-in 200ms;
     }
   }
-`;
+`
