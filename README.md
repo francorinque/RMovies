@@ -31,7 +31,7 @@ Ofrece una experiencia interactiva con **animaciones fluidas**, **estilos person
 
 1. Clona el repositorio: `git clone https://github.com/tu-usuario/rmovies.git && cd rmovies`  
 2. Instala dependencias: `npm install`  
-3. Crea un archivo `.env` en la raíz con tu API key de TMDB: `REACT_APP_TMDB_API_KEY=tu_api_key_aqui`  
+3. Crea un archivo `.env` en la raíz con tu API key de TMDB: `VITE_API_TOKEN=tu_api_key_aqui`  
 4. Inicia el servidor de desarrollo: `npm start`  
 5. Abre en el navegador: `http://localhost:3000`  
 
