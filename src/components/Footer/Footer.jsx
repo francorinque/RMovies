@@ -1,10 +1,10 @@
-import { FooterSocialStyled, FooterStyled } from "./Footer.styled";
+import { FooterSocialStyled, FooterStyled } from './Footer.styled'
 
 const Footer = () => {
   return (
     <FooterStyled>
       <p>
-        Developed by <strong>Franco Rinque</strong>{" "}
+        Developed by <strong>Franco Rinque</strong>{' '}
       </p>
 
       <FooterSocialStyled>
@@ -16,7 +16,7 @@ const Footer = () => {
           Github
         </a>
         <a
-          href="https://www.linkedin.com/in/francorinque"
+          href="hhttps://www.linkedin.com/in/franco-agustin-rinque/"
           target="_blank"
           rel="noreferrer"
         >
@@ -24,6 +24,6 @@ const Footer = () => {
         </a>
       </FooterSocialStyled>
     </FooterStyled>
-  );
-};
-export default Footer;
+  )
+}
+export default Footer
